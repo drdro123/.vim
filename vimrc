@@ -1,3 +1,10 @@
+" copy and paste
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
+
+
 syntax on
 colorscheme monokai
 
@@ -19,7 +26,16 @@ inoremap kj <esc>
 cnoremap kj <C-C>
 
 " NERDTree
-au VimEnter *  NERDTree
+"au VimEnter *  NERDTree
+function! StartUp()
+    " If no file is specified when running Vim, automatically open NERDTree
+    if 0 == argc()
+        NERDTree
+    end
+endfunction
+
+autocmd VimEnter * call StartUp()
+
 let NERDTreeIgnore = ['\.pyc$',
                      \'.*__pycache__.*',
                      \'.*egg-info',

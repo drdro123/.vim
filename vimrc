@@ -3,6 +3,7 @@ colorscheme monokai
 
 filetype plugin indent on
 
+set ignorecase
 set tabstop=4
 set expandtab
 set autoindent 
@@ -13,10 +14,20 @@ set backspace=indent,eol,start
 set visualbell
 set encoding=utf-8
 set number relativenumber
+set splitright
+set splitbelow
 
 " Remap ESC to kj
 inoremap kj <esc>
-cnoremap kj <C-C>
+cnoremap kj <esc>
+inoremap jk <esc>
+cnoremap kj <esc>
+
+"Split navigation without having to press Ctrl+w first
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " NERDTree
 "au VimEnter *  NERDTree

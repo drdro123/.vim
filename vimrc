@@ -7,6 +7,7 @@ set ignorecase
 set tabstop=4
 set expandtab
 set autoindent 
+set smartindent
 set shiftwidth=4
 set ruler
 set number
